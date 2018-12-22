@@ -102,7 +102,7 @@ function render() {
 
             let colorX = (i % size) / (size - 1);
             let colorY = (i / size) / (size - 1);
-            ctx.fillStyle = "rgb(" + (1 - colorX) * 255 + "," + colorY * 255 + "," + colorX * 255 + ")";
+            ctx.fillStyle = "rgb(" + Math.round((1 - colorX) * 255) + "," + Math.round(colorY * 255) + "," + Math.round(colorX * 255) + ")";
 
             if (size <= 5) i = chars[i];
             else i += 1;
@@ -157,7 +157,7 @@ function getTime() {
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    return text = hours + ":" + minutes + ":" + seconds + "." + Math.round(distance % 1000)
+    return text = hours + ":" + minutes + ":" + seconds + "." + ('000' + Math.round(distance % 1000)).slice(-3)
 }
 
 function renderPanel() {

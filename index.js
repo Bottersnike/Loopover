@@ -350,6 +350,7 @@ function anim () {
             action = "Scramble";
             times.unshift(getTime());
             start = 0;
+            dx = undefined, dy = undefined;
         }
     }
 
